@@ -23,7 +23,7 @@ public class Glycemie {
     @Column(columnDefinition = "TEXT")
     private String commentaire;
 
-    @ManyToOne()
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "numeroPatient", nullable = false)
     private com.octest.beans.Patient patient;
 
@@ -41,8 +41,8 @@ public class Glycemie {
         return dateEtHeure;
     }
 
-    public void setDatEtHeure(LocalDateTime datEtHeure) {
-        this.dateEtHeure = datEtHeure;
+    public void setDatEtHeure(LocalDateTime dateEtHeure) {
+        this.dateEtHeure = dateEtHeure;
     }
 
     public Integer getNiveau() {
