@@ -18,8 +18,11 @@ public class Patient {
     @Column(nullable = false)
     Integer age;
 
-    @OneToMany (mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Glycemie> glycemie = new ArrayList<>();
+    @OneToMany (mappedBy = "patient",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.EAGER)
+    private List<Glycemie> glycemies = new ArrayList<>();
 
 
     public Integer getNumeroPatient() {
