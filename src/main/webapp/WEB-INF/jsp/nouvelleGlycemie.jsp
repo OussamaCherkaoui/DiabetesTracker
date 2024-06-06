@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,11 +20,10 @@
 <div class="card-body m-3 p-5">
     <h1 class="card-title text-center fw-bold" style="color:lightskyblue">Nouvelle Glycèmie</h1>
 </div>
-<div><c:out value="${exemple}"></c:out></div>
 <div class="row gap-5 mb-5 m-0">
     <div class="row justify-content-center">
         <div class="col-md-6 bg-blue">
-            <form id="glycemieForm">
+            <form:form id="glycemieForm" method="post" action="ajouterGlycemie">
                 <div class="form-group">
                     <label for="dateEtHeure">Date et Heure</label>
                     <input type="datetime-local" class="form-control" id="dateEtHeure" name="dateEtHeure" required>
@@ -37,8 +37,8 @@
                     <input type="text" class="form-control" id="typeMesure" name="typeMesure" required>
                 </div>
                 <div class="form-group">
-                    <label for="numeroPatient">Patient</label>
-                    <select class="form-select w-50" aria-label="Disabled select example" id="numeroPatient" name="numeroPatient">
+                    <label for="patient">Patient</label>
+                    <select class="form-select w-50" aria-label="Disabled select example" id="patient" name="numeroPatient">
                         <option selected>Selectionnez le patient</option>
                         <c:forEach var="patient" items="${patients}">
                             <option value="${patient.getNumeroPatient()}">${patient.getNomPatient()}</option>
@@ -50,7 +50,7 @@
                     <textarea class="form-control" id="commentaire" name="commentaire" rows="3" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Ajouter Glycémie</button>
-            </form>
+            </form:form>
         </div>
     </div>
 </div>

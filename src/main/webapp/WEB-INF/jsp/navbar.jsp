@@ -1,5 +1,5 @@
 <%@ page pageEncoding="UTF-8" %>
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(0,0,0,0.06);margin: 20px;border-radius: 8px">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(0,0,0,0.22);margin: 20px;border-radius: 8px">
     <div class="container-fluid">
         <button
                 data-mdb-collapse-init
@@ -25,10 +25,7 @@
             </a>
             <ul class="navbar-nav mx-auto me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link text-white"  href="./" id="home">Acceuil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="./analyses" id="project">Analyses</a>
+                    <a class="nav-link text-white fw-bold"  href="./" id="home">Acceuil</a>
                 </li>
             </ul>
         </div>

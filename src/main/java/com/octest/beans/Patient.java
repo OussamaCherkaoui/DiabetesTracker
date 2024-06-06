@@ -7,7 +7,6 @@ import java.util.List;
 @Entity
 @Table(name = "Patient")
 public class Patient {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer numeroPatient;
@@ -18,10 +17,19 @@ public class Patient {
     @Column(nullable = false)
     Integer age;
 
-    @OneToMany (mappedBy = "patient",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true,
-            fetch = FetchType.EAGER)
+
+    public List<Glycemie> getGlycemies() {
+        return glycemies;
+    }
+
+    public void setGlycemies(List<Glycemie> glycemies) {
+        this.glycemies = glycemies;
+    }
+
+    @Column(nullable = false)
+    String picturePatient;
+
+    @OneToMany(mappedBy = "patient")
     private List<Glycemie> glycemies = new ArrayList<>();
 
 
@@ -47,5 +55,13 @@ public class Patient {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public String getPicturePatient() {
+        return picturePatient;
+    }
+
+    public void setPicturePatient(String picturePatient) {
+        this.picturePatient = picturePatient;
     }
 }

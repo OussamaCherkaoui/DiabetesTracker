@@ -20,4 +20,12 @@ public class PatientService {
     public List<Patient> getAllPatients() {
         return (List<Patient>) patientRepository.findAll();
     }
+
+    @Transactional
+    public List<Patient> getPatientsWithGlycemie() {
+        return (List<Patient>) patientRepository.findPatientsWithGlycemie();
+    }
+
+    @Transactional
+    public Patient getPatientById(Integer numeroPatient){return (Patient) patientRepository.getPatientsByNumeroPatient(numeroPatient);}
 }

@@ -1,5 +1,7 @@
 package com.octest.beans;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -12,6 +14,7 @@ public class Glycemie {
     private Long idGlycemie;
 
     @Column(nullable = false)
+    @DateTimeFormat(pattern = "dd-MM-yyyy HH:MM")
     private LocalDateTime dateEtHeure;
 
     @Column(nullable = false)
@@ -20,13 +23,21 @@ public class Glycemie {
     @Column(nullable = false, length = 50)
     private String typeMesure;
 
+    @ManyToOne
+    @JoinColumn(name = "numeroPatient", nullable = false)
+    private Patient patient;
+
     @Column(columnDefinition = "TEXT")
     private String commentaire;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "numeroPatient", nullable = false)
-    private com.octest.beans.Patient patient;
 
+    public Glycemie(LocalDateTime dateEtHeure, Integer niveau, String typeMesure, String commentaire, Patient patient) {
+        this.dateEtHeure = dateEtHeure;
+        this.niveau = niveau;
+        this.typeMesure = typeMesure;
+        this.commentaire = commentaire;
+        this.patient = patient;
+    }
 
     // Getters and setters
     public Long getIdGlycemie() {
