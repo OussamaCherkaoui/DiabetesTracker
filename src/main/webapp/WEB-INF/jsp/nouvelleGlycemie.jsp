@@ -17,26 +17,26 @@
 </head>
 <body>
 <%@ include file="navbar.jsp"%>
-<div class="card-body m-3 p-5">
-    <h1 class="card-title text-center fw-bold" style="color:lightskyblue">Nouvelle Glycèmie</h1>
+<div class="card-body m-1">
+    <h4 class="card-title text-center fw-bold" style="color:lightskyblue">Nouvelle Glycèmie</h4>
 </div>
-<div class="row gap-5 mb-5 m-0">
-    <div class="row justify-content-center">
-        <div class="col-md-6 bg-blue">
+<div class="row gap-5 mb-3 m-0">
+    <div class="row justify-content-center text-white">
+        <div class="col-md-6">
             <form:form id="glycemieForm" method="post" action="ajouterGlycemie">
-                <div class="form-group">
+                <div class="form-group mb-1">
                     <label for="dateEtHeure">Date et Heure</label>
                     <input type="datetime-local" class="form-control" id="dateEtHeure" name="dateEtHeure" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-1">
                     <label for="niveau">Niveau</label>
                     <input type="number" class="form-control" id="niveau" name="niveau" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-1">
                     <label for="typeMesure">Type de Mesure</label>
                     <input type="text" class="form-control" id="typeMesure" name="typeMesure" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-1">
                     <label for="patient">Patient</label>
                     <select class="form-select w-50" aria-label="Disabled select example" id="patient" name="numeroPatient">
                         <option selected>Selectionnez le patient</option>
@@ -45,7 +45,7 @@
                         </c:forEach>
                     </select>
                 </div>
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label for="commentaire">Commentaire</label>
                     <textarea class="form-control" id="commentaire" name="commentaire" rows="3" required></textarea>
                 </div>

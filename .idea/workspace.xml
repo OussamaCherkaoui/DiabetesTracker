@@ -8,15 +8,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/beans/Glycemie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/beans/Glycemie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/beans/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/beans/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/config/DataConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/config/DataConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/controller/glycemieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/controller/glycemieController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/repository/GlycemieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/repository/GlycemieRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/repository/PatientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/repository/PatientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/services/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/services/PatientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/HelloWeb-servlet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/octest/services/GlycemieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/octest/services/GlycemieService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/navbar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/nouvelleGlycemie.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/nouvelleGlycemie.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/analyses.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/analyses.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,6 +129,7 @@
       <workItem from="1717505838987" duration="9624000" />
       <workItem from="1717574812666" duration="14879000" />
       <workItem from="1717661690114" duration="18424000" />
+      <workItem from="1717747853370" duration="7537000" />
     </task>
     <task id="LOCAL-00001" summary="configurer , ajouter class beans, config ,repository et service">
       <option name="closed" value="true" />

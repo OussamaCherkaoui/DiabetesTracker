@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page pageEncoding="UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,19 +10,19 @@
     <title>Our Projects</title>
     <style>
         body{
-            background-color: #4c5151;
+            background-color: #d8dfe1;
         }
     </style>
 </head>
 <body>
 <%@ include file="navbar.jsp"%>
-<div class="card-body m-3 p-5">
-    <h1 class="card-title text-center fw-bold" style="color:lightskyblue">Glycèmie des patients</h1>
+<div class="card-body m-2 p-2">
+    <h2 class="card-title text-center fw-bold" style="color:lightskyblue">Glycèmie des patients</h2>
 </div>
 
 <div class="row gap-5 mb-5 m-0">
     <c:forEach var="patient" items="${Patients}">
-        <div class="card mx-auto" style="width: 70%;background-color: #84bbcf;">
+        <div class="card mx-auto" style="width: 90%;background-color: #84bbcf;">
             <div class="row g-0">
                 <div class="col-md-4 mx-auto" >
                     <div class="card-body">
@@ -35,37 +35,40 @@
                     </div>
                     <img src="${patient.getPicturePatient()}" class="rounded-5 p-3" alt="..." height="250" width="300">
                     <div class="button-crud p-3 d-flex flex-row">
-                        <a class="btn btn-default rounded-2 text-black fw-semibold" href="./analyses?idPatient=" role="button" id="btnGetStarted1" style="background-color: #FFDFB9;width:142px; color: white">Voir Analyse</a>
+                        <a class="btn btn-default rounded-2 text-black fw-semibold" href="./analyses?numeroPatient=${patient.getNumeroPatient()}" role="button" id="btnGetStarted1" style="background-color: #FFDFB9;width:142px; color: white">Voir Analyse</a>
                     </div>
                 </div>
-                <div class="col-md-8 d-flex align-items-center" style="padding-left: 60px">
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>Niveau </th>
-                            <th>Date et heure</th>
-                            <th>Type Mesure</th>
-                            <th>commentaire</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <c:forEach items="${listeEtudiants}" var="etudiant">
-                            <form action="deleteStudent" method="post">
-                                <input type="hidden" value="${etudiant.getMatricule()}" name="matricule">
+                <div class="col-md-8 d-flex justify-content-center align-items-center" >
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped text-center">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th>Niveau</th>
+                                <th>Date et Heure</th>
+                                <th>Type Mesure</th>
+                                <th>Commentaire</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <c:forEach items="${patient.getGlycemies()}" var="glycemie">
                                 <tr>
-                                    <td>${etudiant.getMatricule()}</td>
-                                    <td>${etudiant.getName()}</td>
-                                    <td>${etudiant.getEmail()}</td>
-                                    <td>${etudiant.getTelephone()}</td>
-                                    <td class="action-buttons">
-                                        <a href="/GestionEtudiant/updateStudent?matricule=${etudiant.getMatricule()}" class="edit">Modifier</a>
-                                        <button type="submit" class="delete">Supprimer</button>
+                                    <td>${glycemie.getNiveau()}</td>
+                                    <td>${glycemie.getDatEtHeure()}</td>
+                                    <td>${glycemie.getTypeMesure()}</td>
+                                    <td>${glycemie.getCommentaire()}</td>
+                                    <td>
+                                        <form action="delete" method="post" class="d-inline">
+                                            <input type="hidden" name="id" value="${glycemie.getIdGlycemie()}">
+                                            <input type="hidden" name="numeroPatient" value="${patient.getNumeroPatient()}">
+                                            <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
+                                        </form>
                                     </td>
                                 </tr>
-                            </form>
-                        </c:forEach>
-                        </tbody>
-                    </table>
+                            </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

@@ -10,24 +10,95 @@
     <title>Analyses Glycemie</title>
     <style>
         body{
-            background-color: #4c5151;
+            background-color: #d8dfe1;
         }
     </style>
 </head>
 <body>
 <%@ include file="navbar.jsp"%>
-<div class="card-body m-3 p-5">
-    <h1 class="card-title text-center fw-bold" style="color:lightskyblue">Analyses du Glycèmie</h1>
+<div class="card-body m-3 p-2">
+    <h2 class="card-title text-center fw-bold" style="color:lightskyblue">Analyses du Glycèmie</h2>
 </div>
-
-<div class="row gap-5 mb-5 m-0">
-
+<div style="display: flex;align-items: center;justify-content: center;padding-top: 38px">
+<div class="row m-0" style="width: 50%;">
+    <div>
+        <canvas id="myChart" style="background-color: #ccb8cc;"></canvas>
+    </div>
 </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    let home = document.getElementById('home');
-    let project=document.getElementById('project');
-    home.id="";
-    project.id="active";
+    const glycemieData = [];
+    const labels = [];
+    <c:forEach var="glycemie" items="${Glycemies}">
+    labels.push('${glycemie.getDatEtHeure()}');
+    glycemieData.push(${glycemie.getNiveau()});
+    </c:forEach>
+
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const glycemieChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Glycemie',
+                data: glycemieData,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 2,
+                fill: false,
+                tension: 0.4
+            }]
+        },
+        options: {
+            scales: {
+                x: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Date',
+                        font: {
+                            weight: 'bold',
+                            size: 16
+                        }
+                    }
+                },
+                y: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Glycemie',
+                        font: {
+                            weight: 'bold',
+                            size: 16
+                        }
+                    }
+                }
+            },
+            plugins: {
+                title: {
+                    display: false
+                },
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        boxWidth: 12,
+                        padding: 20,
+                        font: {
+                            size: 14
+                        }
+                    }
+                }
+            },
+            layout: {
+                padding: {
+                    top: 20,
+                    right: 20,
+                    bottom: 20,
+                    left: 20
+                }
+            }
+        }
+    });
 </script>
 </body>
 </html>
