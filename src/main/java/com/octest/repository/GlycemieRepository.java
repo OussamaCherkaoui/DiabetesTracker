@@ -9,4 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface GlycemieRepository extends CrudRepository<Glycemie,Long> {
+    void deleteGlycemieByIdGlycemieAndPatient(Long idGlycemie, Patient patient);
+    List<Glycemie> getGlycemiesByPatient(Patient patient);
 }

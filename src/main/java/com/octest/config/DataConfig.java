@@ -37,7 +37,7 @@ public class DataConfig {
         public DataSource dataSource(){
             DriverManagerDataSource dataSource = new DriverManagerDataSource();
             dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-            dataSource.setUrl("jdbc:mysql://localhost:3306/diabetes?createDatabaseIfNotExist=true");
+            dataSource.setUrl("jdbc:mysql://localhost:3306/diabetes?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf-8");
             dataSource.setUsername( "root" );
             dataSource.setPassword( "" );
             return dataSource;

@@ -17,11 +17,6 @@ public class PatientService {
     PatientRepository patientRepository;
 
     @Transactional
-    public List<Patient> getAllPatients() {
-        return (List<Patient>) patientRepository.findAll();
-    }
-
-    @Transactional
     public List<Patient> getPatientsWithGlycemie() {
         return (List<Patient>) patientRepository.findPatientsWithGlycemie();
     }

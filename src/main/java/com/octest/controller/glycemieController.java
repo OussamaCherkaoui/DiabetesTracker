@@ -29,7 +29,6 @@ public class glycemieController {
     @GetMapping("/")
     public String showHome(ModelMap model) {
         model.put("Patients", patientService.getPatientsWithGlycemie());
-        model.put("glycemies", patientService.getPatientsWithGlycemie());
         return "Home";
     }
 
@@ -51,18 +50,20 @@ public class glycemieController {
         Patient nvpatient = patientService.getPatientById(patient);
         Glycemie glycemie = new Glycemie(date,niv,typeMesure,commentaire,nvpatient);
         glycemieService.saveGlycemie(glycemie);
-        return "Home";
+        return "redirect:/";
     }
 
-    @GetMapping("/delete/{id}")
-    public String deleteGlycemie(@PathVariable long id) {
-        glycemieService.deleteGlycemie(id);
-        return "";
+    @PostMapping("/delete")
+    public String deleteGlycemie(@RequestParam long id ,@RequestParam Integer numeroPatient) {
+        Patient patient = patientService.getPatientById(numeroPatient);
+        glycemieService.deleteGlycemie(id,patient);
+        return "redirect:/";
     }
 
     @GetMapping("/analyses")
-    public String showAnalyticGlycemie() {
-        ArrayList<Glycemie> glycemies = glycemieService.getAllGlycemie();
+    public String showAnalyticGlycemie(@RequestParam Integer numeroPatient,ModelMap model) {
+        Patient patient = patientService.getPatientById(numeroPatient);
+        model.put("Glycemies", glycemieService.getGlycemieByPatient(patient));
         return "analyses";
     }
 }

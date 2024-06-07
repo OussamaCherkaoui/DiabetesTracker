@@ -29,7 +29,7 @@ public class Patient {
     @Column(nullable = false)
     String picturePatient;
 
-    @OneToMany(mappedBy = "patient")
+    @OneToMany(mappedBy = "patient",fetch = FetchType.EAGER)
     private List<Glycemie> glycemies = new ArrayList<>();
 
 

@@ -30,6 +30,7 @@ public class Glycemie {
     @Column(columnDefinition = "TEXT")
     private String commentaire;
 
+    public Glycemie() {}
 
     public Glycemie(LocalDateTime dateEtHeure, Integer niveau, String typeMesure, String commentaire, Patient patient) {
         this.dateEtHeure = dateEtHeure;
