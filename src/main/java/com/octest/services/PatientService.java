@@ -22,5 +22,10 @@ public class PatientService {
     }
 
     @Transactional
+    public List<Patient> getAllPatients() {
+        return (List<Patient>) patientRepository.findAll();
+    }
+
+    @Transactional
     public Patient getPatientById(Integer numeroPatient){return (Patient) patientRepository.getPatientsByNumeroPatient(numeroPatient);}
 }

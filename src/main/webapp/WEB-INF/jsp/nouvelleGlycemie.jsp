@@ -23,7 +23,7 @@
 <div class="row gap-5 mb-3 m-0">
     <div class="row justify-content-center text-white">
         <div class="col-md-6">
-            <form:form id="glycemieForm" method="post" action="ajouterGlycemie">
+            <form:form id="glycemieForm" method="post" action="ajouterGlycemie" onsubmit="return validateForm()">
                 <div class="form-group mb-1">
                     <label for="dateEtHeure">Date et Heure</label>
                     <input type="datetime-local" class="form-control" id="dateEtHeure" name="dateEtHeure" required>
@@ -55,10 +55,26 @@
     </div>
 </div>
 <script>
-    let home = document.getElementById('home');
-    let project=document.getElementById('project');
-    home.id="";
-    project.id="active";
+
+    function validateForm() {
+        var dateEtHeure = document.getElementById('dateEtHeure').value;
+        var niveau = document.getElementById('niveau').value;
+        var typeMesure = document.getElementById('typeMesure').value;
+        var patient = document.getElementById('patient').value;
+        var commentaire = document.getElementById('commentaire').value;
+
+        if (!dateEtHeure || !niveau || !typeMesure || !patient || !commentaire) {
+            alert('Tous les champs sont obligatoires.');
+            return false;
+        }
+
+        if (niveau <= 0) {
+            alert('Le niveau doit être supérieur à 0.');
+            return false;
+        }
+
+        return true;
+    }
 </script>
 </body>
 </html>

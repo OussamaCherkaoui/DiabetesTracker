@@ -1,5 +1,5 @@
 <%@ page pageEncoding="UTF-8" %>
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(0,0,0,0.22);margin: 20px;border-radius: 8px">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(0,0,0,0.22);margin: 20px 20px 0px 20px;border-radius: 8px">
     <div class="container-fluid">
         <button
                 data-mdb-collapse-init
