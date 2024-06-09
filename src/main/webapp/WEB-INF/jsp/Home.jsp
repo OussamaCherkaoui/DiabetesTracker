@@ -17,19 +17,21 @@
         }
         .horizontal-scroll-container {
             display: flex;
-            overflow: auto; /* Hide the overflow to show only one patient at a time */
-            scroll-behavior: smooth; /* Smooth scrolling */
+            overflow: auto;
+            scroll-behavior: smooth;
             width: 100%;
         }
 
         .horizontal-scroll-container .card {
             flex: 0 0 auto;
-            width: 100%; /* Take full container width */
+            width: 100%;
         }
 
         .horizontal-scroll-container::-webkit-scrollbar {
-            display: none;  /* Safari and Chrome */
+            display: none;
         }
+
+
     </style>
 </head>
 <body>
