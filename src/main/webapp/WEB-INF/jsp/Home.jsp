@@ -55,7 +55,7 @@
                             </div>
                             <img src="${patient.getPicturePatient()}" class="rounded-5 p-3" alt="..." height="250" width="300">
                             <div class="button-crud p-3 d-flex flex-row">
-                                <a class="btn btn-default rounded-2 text-black fw-semibold" href="./analyses?numeroPatient=${patient.getNumeroPatient()}" role="button" id="btnGetStarted1" style="background-color: #FFDFB9;width:142px; color: white">Voir Analyse</a>
+                                <a class="btn btn-default rounded-2 text-black fw-semibold" href="./analyses?numeroPatient=${patient.getNumeroPatient()}" role="button" id="btnGetStarted1" style="background-color: #FFDFB9;width:260px; color: white">Voir Analyse</a>
                             </div>
                         </div>
                         <div class="col-md-8 d-flex justify-content-center align-items-center">
