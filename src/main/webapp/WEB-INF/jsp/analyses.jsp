@@ -10,19 +10,19 @@
     <title>Analyses Glycemie</title>
     <style>
         body{
-            background-color: #d8dfe1;
+            background-color: #CADBC0;
         }
     </style>
 </head>
 <body>
 <%@ include file="navbar.jsp"%>
 <div class="card-body m-3 p-2">
-    <h2 class="card-title text-center fw-bold" style="color:lightskyblue">Analyses du Glycèmie</h2>
+    <h2 class="card-title text-center fw-bold" style="color:#2F0A28">Analyses du Glycèmie</h2>
 </div>
 <div style="display: flex;align-items: center;justify-content: center;padding-top: 38px">
 <div class="row m-0" style="width: 50%;">
     <div>
-        <canvas id="myChart" style="background-color: #ccb8cc;"></canvas>
+        <canvas id="myChart" style="background-color: #FFDFB9;"></canvas>
     </div>
 </div>
 </div>

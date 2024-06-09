@@ -11,14 +11,14 @@
     <title>Nouvelle Glycemie</title>
     <style>
         body{
-            background-color: #4c5151;
+            background-color: #CADBC0;
         }
     </style>
 </head>
 <body>
 <%@ include file="navbar.jsp"%>
-<div class="card-body m-1">
-    <h4 class="card-title text-center fw-bold" style="color:lightskyblue">Nouvelle Glycèmie</h4>
+<div class="card-body" style="margin-top: 20px">
+    <h4 class="card-title text-center fw-bold" style="color:#2F0A28">Nouvelle Glycèmie</h4>
 </div>
 <div class="row gap-5 mb-3 m-0">
     <div class="row justify-content-center text-white">
@@ -49,7 +49,7 @@
                     <label for="commentaire">Commentaire</label>
                     <textarea class="form-control" id="commentaire" name="commentaire" rows="3" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Ajouter Glycémie</button>
+                <button type="submit" class="btn btn-block" style="background-color:#FFDFB9">Ajouter Glycémie</button>
             </form:form>
         </div>
     </div>

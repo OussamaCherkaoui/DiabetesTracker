@@ -13,7 +13,7 @@
             color:blue;
         }
         body{
-            background-color: #5edaff;
+            background-color: #CADBC0;
         }
         .horizontal-scroll-container {
             display: flex;
@@ -35,7 +35,7 @@
 <body>
 <%@ include file="navbar.jsp"%>
 <div class="card-body m-3">
-    <h3 class="card-title text-center fw-bold" style="color:#173243">Glycèmie des patients</h3>
+    <h3 class="card-title text-center fw-bold" style="color:#2F0A28">Glycèmie des patients</h3>
 </div>
 
 <div class="row gap-5  m-2">
@@ -44,7 +44,7 @@
             <c:forEach var="patient" items="${Patients}">
                 <div class="card mx-2" style="min-width: 350px;background-color: rgba(0,0,0,0.27);">
                     <div class="row g-0">
-                        <div class="col-md-4 mx-auto">
+                        <div class="col-md-4 mx-auto d-flex flex-column align-items-center justify-content-center" style="background-color: #2F0A28">
                             <div class="card-body">
                                 <h5 class="text-white">
                                     Nom du patient : ${patient.getNomPatient()}
